@@ -4,7 +4,7 @@ Tensorflow implementation for:
 
 [Generative Adversarial User Model for Reinforcement Learning Based Recommendation System](https://arxiv.org/abs/1812.10613) [1]
 
-In preparation. Need authorization for data publication.
+(In preparation. Waiting for authorization for releasing codes and data.)
 
 # Install
 
