@@ -2,7 +2,7 @@
 
 Tensorflow implementation for:
 
-[Generative Adversarial User Model for Reinforcement Learning Based Recommendation System](https://arxiv.org/abs/1812.10613) [1]
+[Generative Adversarial User Model for Reinforcement Learning Based Recommendation System](http://proceedings.mlr.press/v97/chen19f/chen19f.pdf) [1]
 
 (Currently the ant financial dataset is not authorized to released. Experiments on other public dataset are released.)
 
@@ -32,6 +32,46 @@ ganrl
     |___tb.txt
     |......
 ...
+```
+
+Process the data before running the experiments:
+```
+cd dropbox
+./process_data.sh
+```
+
+# Experiments
+
+By modifying the sh scripts, You can tune the hyperparameters like the architecture of the neural networks, learning rate, etc.
+
+## GA User Model with Shannon Entropy
+### train and evaluate
+Navigate to the experiment folder. You can run the sh script directly or set the hyperparameters by yourself.
+To try a different split of train, test, validation sets, you can change `-resplit False` to `-resplit True` in the sh file. 
+```
+cd ganrl/experiment_user_model/
+./run_gan_user_model.sh
+```
+The trained model will be saved in `scratch/` folder.
+
+## GA User Model with L2 Regularization
+First, train the user model using Shannon Entropy by running `./run_gan_user_model.sh`. With this saved model as an initilization, you can continue to train the model using other regularizations. For example, L2:
+```
+cd ganrl/experiment_user_model/
+./run_gan_user_model.sh
+./run_gan_L2_regularized_yelp.sh
+```
+
+# Citation
+If you found it useful in your research, please consider citing
+```
+@inproceedings{chen2019generative,
+  title={Generative Adversarial User Model for Reinforcement Learning Based Recommendation System},
+  author={Chen, Xinshi and Li, Shuang and Li, Hui and Jiang, Shaohua and Qi, Yuan and Song, Le},
+  booktitle={International Conference on Machine Learning},
+  pages={1052--1061},
+  year={2019}
+}
 ```
 
 # References
