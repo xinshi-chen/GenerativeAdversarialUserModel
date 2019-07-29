@@ -18,7 +18,7 @@ pip install -e .
 
 The dataset can be obtained via the [shared dropbox folder](https://www.dropbox.com/sh/57gqb1c98gxasr8/AABDPPVnggypWwn2NsLNq7x6a?dl=0).
 
-After downloading the shared folder, put it under the root of the project (or create a symbolic link) and rename it as 'dropbox', so that the default bash script can automatically find them.
+After downloading the `.txt` files in the shared folder, put then under the 'dropbox' folder, so that the default bash script can automatically find them.
 
 Finally the project has the following folder structure:
 ```
@@ -27,7 +27,9 @@ ganrl
 |   |___common # common implementations
 |   |___experiment_user_model # code for experiments in Sec 6.1 in the paper
 |
-|___dropbox  # processed yelp, tb, rsc dataset.
+|___dropbox  # yelp, tb, rsc dataset.
+    |___process_data.py
+    |___process_data.sh
     |___yelp.txt
     |___tb.txt
     |......
