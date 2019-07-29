@@ -6,17 +6,17 @@ Tensorflow implementation for:
 
 (Currently the ant financial dataset is not authorized to released. Experiments on other public dataset are released.)
 
-# Setup
+## Setup
 
-## Install
+### Install
 Clone and install the current package.
 ```
 pip install -e .
 ```
 
-## data
+### Data
 
-The dataset can be obtained via the [shared dropbox folder](https://www.dropbox.com/sh/57gqb1c98gxasr8/AABDPPVnggypWwn2NsLNq7x6a?dl=0)
+The dataset can be obtained via the [shared dropbox folder](https://www.dropbox.com/sh/57gqb1c98gxasr8/AABDPPVnggypWwn2NsLNq7x6a?dl=0).
 
 After downloading the shared folder, put it under the root of the project (or create a symbolic link) and rename it as 'dropbox', so that the default bash script can automatically find them.
 
@@ -40,12 +40,11 @@ cd dropbox
 ./process_data.sh
 ```
 
-# Experiments
+## Experiments
 
 By modifying the sh scripts, You can tune the hyperparameters like the architecture of the neural networks, learning rate, etc.
 
-## GA User Model with Shannon Entropy
-### train and evaluate
+### GA User Model with Shannon Entropy
 Navigate to the experiment folder. You can run the sh script directly or set the hyperparameters by yourself.
 To try a different split of train, test, validation sets, you can change `-resplit False` to `-resplit True` in the sh file. 
 ```
@@ -54,7 +53,7 @@ cd ganrl/experiment_user_model/
 ```
 The trained model will be saved in `scratch/` folder.
 
-## GA User Model with L2 Regularization
+### GA User Model with L2 Regularization
 First, train the user model using Shannon Entropy by running `./run_gan_user_model.sh`. With this saved model as an initilization, you can continue to train the model using other regularizations. For example, L2:
 ```
 cd ganrl/experiment_user_model/
@@ -62,7 +61,7 @@ cd ganrl/experiment_user_model/
 ./run_gan_L2_regularized_yelp.sh
 ```
 
-# Citation
+## Citation
 If you found it useful in your research, please consider citing
 ```
 @inproceedings{chen2019generative,
@@ -74,5 +73,5 @@ If you found it useful in your research, please consider citing
 }
 ```
 
-# References
+## References
 [1] Xinshi Chen, Shuang Li, Hui Li, Shaohua Jiang, Yuan Qi, Le Song. "Generative Adversarial User Model for Reinforcement Learning Based Recommendation System." *In International Conference on Machine Learning.* 2019.
