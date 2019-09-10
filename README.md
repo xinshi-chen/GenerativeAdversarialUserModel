@@ -41,6 +41,10 @@ Process the data before running the experiments:
 cd dropbox
 ./process_data.sh
 ```
+Explanation of the original `.txt` file:
+The column 'session_new_index' corresponds to user ID.
+The column 'item_new_index' corresponds to item ID.
+If several items have the same 'Time' index, then they are displayed at the same time (in the same display set).
 
 ## Experiments
 
